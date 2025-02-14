@@ -34,6 +34,26 @@ const { title } = Astro.props;
 			/>
 		</noscript>
 
+		<!-- Google tag (gtag.js) -->
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-K9VFGR6XZS"
+		></script>
+		<script>
+			declare global {
+				interface Window {
+					dataLayer: any[];
+				}
+			}
+			window.dataLayer = window.dataLayer || [];
+			function gtag(...args: any[]) {
+				window.dataLayer.push(args);
+			}
+			gtag("js", new Date());
+
+			gtag("config", "G-K9VFGR6XZS");
+		</script>
+
 		<title>{title}</title>
 	</head>
 	<body class="bg-[--background] md:px-48 lg:px-20 px-9">
