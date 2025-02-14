@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import svgl from "../../public/svgl.png";
+import yappin from "../../public/yappin.png";
 import portfolio from "../../public/portfolio.png";
 
 interface Project {
@@ -21,17 +22,17 @@ const projects: Project[] = [
 	},
 	{
 		title: "Yappin",
-		image: svgl as ImageMetadata,
+		image: yappin as ImageMetadata,
 		link: "https://github.com/gutche/yappin",
 		preview: "https://yappin.vercel.app",
 		status: "In Development",
 	},
 	{
-		title: "Portfolio (old)",
+		title: "Portfolio made with gatsby(old)",
 		image: portfolio as ImageMetadata,
 		link: "https://github.com/gutche/portfolio",
 		preview: "https://gledrian.dev.vercel.app",
-		status: "Released",
+		status: "Finished",
 	},
 ];
 ---
