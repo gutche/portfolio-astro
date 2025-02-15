@@ -2,26 +2,28 @@
 import LetterGlitch from "../React/LetterGlitch.tsx";
 import LogoWall from "../components/logoWall.astro";
 import SkillsList from "../React/SkillsList.tsx";
+import CodeBlock from "../React/CodeBlock.tsx";
+import { Image } from "astro:assets";
+import headshot from "../../public/headshot.png";
+
+interface Hero {
+	title: string;
+	image: ImageMetadata;
+}
+
+const hero: Hero = {
+	title: "Gledrian's headshot",
+	image: headshot as ImageMetadata,
+};
 ---
 
 <section class="text-[var(--white)] mt-12 md:mt-0" id="home">
 	<div class="max-w-5xl mx-auto space-y-8 md:py-36 pb-14">
 		<div class="text-left space-y-4">
-			<p class="text-md md:text-lg text-[var(--white-icon)] shiny-white">
-				Hi, I'm Gledrian
-			</p>
 			<div
-				class="flex flex-col lg:flex-row lg:items-center space-y-4 lg:space-y-0 lg:space-x-8 md:gap-4">
-				<h1
-					class="text-[var(--white)] text-5xl md:text-6xl font-medium text-pretty leading-none">
-					Software <br /> Engineer
-				</h1>
-				<p class="text-md md:text-2xl text-[var(--white-icon)]">
-					Transforming ideas into interactive and seamless digital
-					experiences with cutting-edge <span
-						class="text-[var(--sec)] shiny-sec">frontend</span
-					> development.
-				</p>
+				class="flex flex-col justify-center items-center lg:flex-row space-y-4 lg:space-y-0 lg:space-x-8 md:gap-4">
+				<CodeBlock />
+				<Image src={hero.image} alt={hero.title} />
 			</div>
 			<div class="flex justify-start gap-2 pt-3 md:pt-6">
 				<a
