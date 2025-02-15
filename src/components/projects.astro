@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import svgl from "../../public/svgl.png";
+import portfolioAstro from "../../public/portfolio-astro.png";
 import yappin from "../../public/yappin.png";
 import portfolio from "../../public/portfolio.png";
 
@@ -15,7 +15,7 @@ interface Project {
 const projects: Project[] = [
 	{
 		title: "Portfolio",
-		image: svgl as ImageMetadata,
+		image: portfolioAstro as ImageMetadata,
 		link: "https://github.com/gutche/portfolio-astro",
 		preview: "https://gledrian.dev",
 		status: "In development",
@@ -57,7 +57,7 @@ const projects: Project[] = [
 								<Image
 									src={project.image}
 									alt={project.title}
-									class="w-full h-48 md:h-72 object-cover group-hover:scale-105 transition-transform duration-300"
+									class="w-full h-48 md:h-72 group-hover:scale-105 transition-transform duration-300"
 								/>
 							</div>
 							<div class="flex items-center px-3">
