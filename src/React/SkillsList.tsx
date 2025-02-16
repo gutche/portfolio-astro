@@ -56,11 +56,11 @@ const SkillsList = () => {
 
 	return (
 		<div className="text-left pt-3 md:pt-9">
-			<div className="mockup-browser bg-neutral-800 border border-[var(--sec)]">
+			<div className="mockup-browser bg-neutral-800 border border-[var(--sec)] text-sm md:text-md lg:text-xl">
 				<div className="mockup-browser-toolbar">
-					<div className="input font-bold">What I do?</div>
+					<div className="input ">What I do?</div>
 				</div>
-				<div className="bg-neutral-900 flex justify-center px-4 py-16 font-bold">
+				<div className="bg-neutral-900 flex justify-center px-4 py-16 ">
 					I’m primarily a Fullstack Web Developer, but I’m also
 					learning Mobile Development and AI, and I plan to get more
 					involved in both.
