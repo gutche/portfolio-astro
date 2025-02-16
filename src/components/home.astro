@@ -4,7 +4,7 @@ import LogoWall from "../components/logoWall.astro";
 import SkillsList from "../React/SkillsList.tsx";
 import CodeBlock from "../React/CodeBlock.tsx";
 import { Image } from "astro:assets";
-import headshot from "../../public/headshot.png";
+import headshot from "../../public/headshot-drawing.png";
 
 interface Hero {
 	title: string;
@@ -23,11 +23,13 @@ const hero: Hero = {
 			<div
 				class="flex flex-col justify-center items-center lg:flex-row space-y-4 lg:space-y-0 lg:space-x-8 md:gap-4">
 				<CodeBlock />
-				<Image src={hero.image} alt={hero.title} />
+				<Image
+					src={hero.image}
+					alt={hero.title}
+					class="border-0 rounded-3xl bg-cover"
+				/>
 			</div>
 		</div>
-
-		<LogoWall />
 
 		<div class="flex flex-col lg:flex-row items-center gap-8">
 			<SkillsList client:load />
