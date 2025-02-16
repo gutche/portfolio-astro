@@ -1,0 +1,73 @@
+---
+import portfolioAstro from "../../public/portfolio-astro.png";
+import yappin from "../../public/yappin.png";
+import portfolio from "../../public/portfolio.png";
+import LetterGlitch from "@/React/LetterGlitch";
+
+interface Project {
+	title: string;
+	image: ImageMetadata;
+	link: string;
+	preview: string;
+	status: string;
+}
+
+const projects: Project[] = [
+	{
+		title: "Portfolio",
+		image: portfolioAstro as ImageMetadata,
+		link: "https://github.com/gutche/portfolio-astro",
+		preview: "https://gledrian.dev",
+		status: "In development",
+	},
+	{
+		title: "Yappin",
+		image: yappin as ImageMetadata,
+		link: "https://github.com/gutche/yappin",
+		preview: "https://yappin.vercel.app",
+		status: "In Development",
+	},
+	{
+		title: "Portfolio made with gatsby(old)",
+		image: portfolio as ImageMetadata,
+		link: "https://github.com/gutche/portfolio",
+		preview: "https://gledrian.dev.vercel.app",
+		status: "Finished",
+	},
+];
+---
+
+<section
+	id="skills"
+	class="py-12 border-t border-[#ffffff10] text-[var(--white)]">
+	<div class="max-w-5xl mx-auto">
+		<h3 class="text-4xl md:text-5xl font-medium mb-8">Skills</h3>
+
+		<div class="flex flex-col lg:flex-row items-center gap-8">
+			<div class="text-left pt-3 md:pt-9">
+				<div
+					class="mockup-browser bg-neutral-800 border border-[var(--sec)] text-sm md:text-md lg:text-xl">
+					<div class="mockup-browser-toolbar">
+						<div class="input">What I do?</div>
+					</div>
+					<div class="bg-neutral-900 flex justify-center px-4 py-16">
+						I’m primarily a Fullstack Web Developer, but I’m also
+						learning Mobile Development and AI, and I plan to get
+						more involved in both.
+					</div>
+				</div>
+			</div>
+			<div
+				class="flex justify-center md:w-full md:h-[292px] size-[290px] pt-3 md:pt-9 md:ml-16">
+				<LetterGlitch
+					client:load
+					glitchColors={["#008080", "#006666", "#004c4c"]}
+					glitchSpeed={33}
+					centerVignette={false}
+					outerVignette={true}
+					smooth={true}
+				/>
+			</div>
+		</div>
+	</div>
+</section>
