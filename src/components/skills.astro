@@ -59,46 +59,51 @@ const skills: SkillCategory[] = [
 <section
 	id="skills"
 	class="py-12 border-t border-[#ffffff10] text-[var(--white)]">
-	<div class="max-w-5xl mx-auto">
+	<div class="max-w-5xl mx-auto px-4">
 		<h3 class="text-4xl md:text-5xl font-medium mb-8">Skills</h3>
 
-		<div class="flex flex-col lg:flex-row items-center gap-8">
-			<div class="text-left pt-3 md:pt-9">
-				<div class="overflow-x-auto">
-					<table class="table">
-						<tbody>
-							{
-								skills.map((skill) => (
-									<tr>
-										<th>{skill.category}</th>
-										{skill.technologies.map((tech) => (
-											<td>
-												<div class="flex items-center gap-3">
-													<div class="avatar">
-														<div class="mask mask-squircle h-6 w-6">
-															<img
-																src={`svg/${tech.icon}`}
-																alt={`${tech.title} Icon`}
-															/>
+		<div class="flex flex-col lg:flex-row items-start gap-8">
+			<div class="w-full text-left pt-3 md:pt-9">
+				<div class="relative w-full">
+					<div
+						class="overflow-x-auto border border-neutral-800 rounded-lg">
+						<table class="w-full table-auto min-w-[600px]">
+							<tbody>
+								{
+									skills.map((skill) => (
+										<tr class="border-b border-neutral-800 last:border-b-0">
+											<th class="bg-neutral-900 p-4 text-left whitespace-nowrap">
+												{skill.category}
+											</th>
+											{skill.technologies.map((tech) => (
+												<td class="p-4">
+													<div class="flex items-center gap-3">
+														<div class="avatar">
+															<div class="mask mask-squircle h-6 w-6">
+																<img
+																	src={`svg/${tech.icon}`}
+																	alt={`${tech.title} Icon`}
+																/>
+															</div>
+														</div>
+														<div>
+															<div class="font-bold whitespace-nowrap">
+																{tech.title}
+															</div>
 														</div>
 													</div>
-													<div>
-														<div class="font-bold">
-															{tech.title}
-														</div>
-													</div>
-												</div>
-											</td>
-										))}
-									</tr>
-								))
-							}
-						</tbody>
-					</table>
+												</td>
+											))}
+										</tr>
+									))
+								}
+							</tbody>
+						</table>
+					</div>
 				</div>
 			</div>
 			<div
-				class="flex justify-center md:w-full md:h-[292px] size-[290px] pt-3 md:pt-9 md:ml-16">
+				class="flex justify-center md:w-full md:h-[292px] size-[290px] pt-3 md:pt-9 lg:ml-16">
 				<LetterGlitch
 					client:load
 					glitchColors={["#008080", "#006666", "#004c4c"]}
