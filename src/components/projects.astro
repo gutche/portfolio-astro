@@ -1,8 +1,8 @@
 ---
 import { Image } from "astro:assets";
 import portfolioAstro from "../../public/portfolio-astro.png";
-import yappin from "../../public/yappin.png";
-import portfolio from "../../public/portfolio.png";
+import yappin from "../../public/yappin-web.png";
+import oldPortfolio from "../../public/portfolio-old.png";
 
 interface Project {
 	title: string;
@@ -29,7 +29,7 @@ const projects: Project[] = [
 	},
 	{
 		title: "Portfolio made with gatsby(old)",
-		image: portfolio as ImageMetadata,
+		image: oldPortfolio as ImageMetadata,
 		link: "https://github.com/gutche/portfolio",
 		preview: "https://gledrian.dev.vercel.app",
 		status: "Finished",
