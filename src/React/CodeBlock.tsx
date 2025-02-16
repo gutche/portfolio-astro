@@ -1,6 +1,6 @@
 const CodeBlock = () => {
 	return (
-		<pre className="text-[var(--white)] text-sm md:text-md lg:text-xl font-medium leading-none font-[var(--font)] p-4 rounded-lg bg-[#1e1e1e] w-fit">
+		<pre className="text-[var(--white)] text-sm md:text-md lg:text-xl font-medium leading-none font-[var(--font)] p-4 rounded-lg bg-neutral-900 w-fit">
 			<code>
 				<span className="text-orange-400">const</span> name:{" "}
 				<span className="text-blue-500">string</span> ={" "}
