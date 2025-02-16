@@ -1,38 +1,57 @@
 ---
-import portfolioAstro from "../../public/portfolio-astro.png";
-import yappin from "../../public/yappin.png";
-import portfolio from "../../public/portfolio.png";
 import LetterGlitch from "@/React/LetterGlitch";
 
-interface Project {
+interface Technology {
 	title: string;
-	image: ImageMetadata;
-	link: string;
-	preview: string;
-	status: string;
+	icon: string;
 }
 
-const projects: Project[] = [
+interface SkillCategory {
+	category: string;
+	technologies: Technology[];
+}
+
+const skills: SkillCategory[] = [
 	{
-		title: "Portfolio",
-		image: portfolioAstro as ImageMetadata,
-		link: "https://github.com/gutche/portfolio-astro",
-		preview: "https://gledrian.dev",
-		status: "In development",
+		category: "Frontend",
+		technologies: [
+			{ title: "Astro", icon: "astro.svg" },
+			{ title: "React", icon: "react.svg" },
+			{ title: "Vue", icon: "vue.svg" },
+			{ title: "Angular", icon: "angular.svg" },
+		],
 	},
 	{
-		title: "Yappin",
-		image: yappin as ImageMetadata,
-		link: "https://github.com/gutche/yappin",
-		preview: "https://yappin.vercel.app",
-		status: "In Development",
+		category: "Backend",
+		technologies: [
+			{ title: "Node.js", icon: "nodejs.svg" },
+			{ title: "Express", icon: "express.svg" },
+			{ title: "Spring Boot", icon: "springboot.svg" },
+		],
 	},
 	{
-		title: "Portfolio made with gatsby(old)",
-		image: portfolio as ImageMetadata,
-		link: "https://github.com/gutche/portfolio",
-		preview: "https://gledrian.dev.vercel.app",
-		status: "Finished",
+		category: "Data Management",
+		technologies: [
+			{ title: "PostgreSQL", icon: "postgres.svg" },
+			{ title: "Redis", icon: "redis.svg" },
+			{ title: "MySql", icon: "mysql.svg" },
+		],
+	},
+	{
+		category: "Programming Languages",
+		technologies: [
+			{ title: "TypeScript", icon: "typeScript.svg" },
+			{ title: "Python", icon: "python.svg" },
+			{ title: "Java", icon: "java.svg" },
+			{ title: "C", icon: "C.svg" },
+		],
+	},
+	{
+		category: "Others",
+		technologies: [
+			{ title: "Git", icon: "git.svg" },
+			{ title: "Docker", icon: "docker.svg" },
+		],
 	},
 ];
 ---
@@ -45,16 +64,37 @@ const projects: Project[] = [
 
 		<div class="flex flex-col lg:flex-row items-center gap-8">
 			<div class="text-left pt-3 md:pt-9">
-				<div
-					class="mockup-browser bg-neutral-800 border border-[var(--sec)] text-sm md:text-md lg:text-xl">
-					<div class="mockup-browser-toolbar">
-						<div class="input">What I do?</div>
-					</div>
-					<div class="bg-neutral-900 flex justify-center px-4 py-16">
-						I’m primarily a Fullstack Web Developer, but I’m also
-						learning Mobile Development and AI, and I plan to get
-						more involved in both.
-					</div>
+				<div class="overflow-x-auto">
+					<table class="table">
+						<tbody>
+							{
+								skills.map((skill) => (
+									<tr>
+										<th>{skill.category}</th>
+										{skill.technologies.map((tech) => (
+											<td>
+												<div class="flex items-center gap-3">
+													<div class="avatar">
+														<div class="mask mask-squircle h-6 w-6">
+															<img
+																src={`svg/${tech.icon}`}
+																alt={`${tech.title} Icon`}
+															/>
+														</div>
+													</div>
+													<div>
+														<div class="font-bold">
+															{tech.title}
+														</div>
+													</div>
+												</div>
+											</td>
+										))}
+									</tr>
+								))
+							}
+						</tbody>
+					</table>
 				</div>
 			</div>
 			<div
