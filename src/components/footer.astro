@@ -1,5 +1,9 @@
 ---
+import { Image } from "astro:assets";
 import LikeButton from "../React/LikeButton.tsx";
+import tailwindIcon from "../assets/svg/tailwindcss.svg";
+import vercelIcon from "../assets/svg/vercel.svg";
+import astroIcon from "../assets/svg/astro.svg";
 ---
 
 <footer class="w-full py-12 border-t border-[#ffffff10]">
@@ -48,19 +52,19 @@ import LikeButton from "../React/LikeButton.tsx";
 							{
 								desc: "Built with",
 								name: "Astro",
-								icon: "/svg/astro.svg",
+								icon: astroIcon,
 								alt: "Astro Logo",
 							},
 							{
 								desc: "Styled with",
 								name: "TailwindCSS",
-								icon: "/svg/tailwindcss.svg",
+								icon: tailwindIcon,
 								alt: "TailwindCSS Logo",
 							},
 							{
 								desc: "Deployed on",
 								name: "Vercel",
-								icon: "/svg/vercel.svg",
+								icon: vercelIcon,
 								alt: "Vercel Logo",
 							},
 						].map((tech) => (
@@ -68,7 +72,7 @@ import LikeButton from "../React/LikeButton.tsx";
 								<span class="text-[var(--white-icon)] text-sm">
 									{tech.desc}
 								</span>
-								<img
+								<Image
 									src={tech.icon}
 									alt={tech.alt}
 									class="h-5 w-5 object-contain filter brightness-0 invert opacity-50"

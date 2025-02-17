@@ -1,7 +1,26 @@
 ---
+import { Image } from "astro:assets";
+import astroIcon from "../assets/svg/astro.svg";
+import reactIcon from "../assets/svg/react.svg";
+import vueIcon from "../assets/svg/vue.svg";
+import angularIcon from "../assets/svg/angular.svg";
+import nodejsIcon from "../assets/svg/nodejs.svg";
+import expressIcon from "../assets/svg/express.svg";
+import springBootIcon from "../assets/svg/springboot.svg";
+import postgresIcon from "../assets/svg/postgres.svg";
+import redisIcon from "../assets/svg/redis.svg";
+import mysqlIcon from "../assets/svg/mysql.svg";
+import typescriptIcon from "../assets/svg/typeScript.svg";
+import pythonIcon from "../assets/svg/python.svg";
+import javaIcon from "../assets/svg/java.svg";
+import cIcon from "../assets/svg/C.svg";
+import gitIcon from "../assets/svg/git.svg";
+import dockerIcon from "../assets/svg/docker.svg";
+import graphqlIcon from "../assets/svg/graphql.svg";
+
 interface Technology {
 	title: string;
-	icon: string;
+	icon: ImageMetadata;
 }
 
 interface SkillCategory {
@@ -13,43 +32,43 @@ const skills: SkillCategory[] = [
 	{
 		category: "Frontend",
 		technologies: [
-			{ title: "Astro", icon: "astro.svg" },
-			{ title: "React", icon: "react.svg" },
-			{ title: "Vue", icon: "vue.svg" },
-			{ title: "Angular", icon: "angular.svg" },
+			{ title: "Astro", icon: astroIcon },
+			{ title: "React", icon: reactIcon },
+			{ title: "Vue", icon: vueIcon },
+			{ title: "Angular", icon: angularIcon },
 		],
 	},
 	{
 		category: "Backend",
 		technologies: [
-			{ title: "Node.js", icon: "nodejs.svg" },
-			{ title: "Express", icon: "express.svg" },
-			{ title: "Spring Boot", icon: "springboot.svg" },
+			{ title: "Node.js", icon: nodejsIcon },
+			{ title: "Express", icon: expressIcon },
+			{ title: "Spring Boot", icon: springBootIcon },
 		],
 	},
 	{
 		category: "Data Management",
 		technologies: [
-			{ title: "PostgreSQL", icon: "postgres.svg" },
-			{ title: "Redis", icon: "redis.svg" },
-			{ title: "MySql", icon: "mysql.svg" },
+			{ title: "PostgreSQL", icon: postgresIcon },
+			{ title: "Redis", icon: redisIcon },
+			{ title: "MySql", icon: mysqlIcon },
 		],
 	},
 	{
 		category: "Programming Languages",
 		technologies: [
-			{ title: "TypeScript", icon: "typeScript.svg" },
-			{ title: "Python", icon: "python.svg" },
-			{ title: "Java", icon: "java.svg" },
-			{ title: "C", icon: "C.svg" },
+			{ title: "TypeScript", icon: typescriptIcon },
+			{ title: "Python", icon: pythonIcon },
+			{ title: "Java", icon: javaIcon },
+			{ title: "C", icon: cIcon },
 		],
 	},
 	{
 		category: "Others",
 		technologies: [
-			{ title: "Git", icon: "git.svg" },
-			{ title: "Docker", icon: "docker.svg" },
-			{ title: "GraphQL", icon: "graphql.svg" },
+			{ title: "Git", icon: gitIcon },
+			{ title: "Docker", icon: dockerIcon },
+			{ title: "GraphQL", icon: graphqlIcon },
 		],
 	},
 ];
@@ -79,8 +98,10 @@ const skills: SkillCategory[] = [
 													<div class="flex items-center gap-3">
 														<div class="avatar">
 															<div class="mask mask-squircle h-6 w-6">
-																<img
-																	src={`svg/${tech.icon}`}
+																<Image
+																	src={
+																		tech.icon
+																	}
 																	alt={`${tech.title} Icon`}
 																/>
 															</div>

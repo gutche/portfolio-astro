@@ -1,6 +1,6 @@
 # Portfolio
 
-![portfolio screenshot](public/portfolio-astro.png)
+![portfolio screenshot](src/assets//portfolio-astro.png)
 
 [![Deploy Status](https://img.shields.io/badge/Deploy-Vercel-black?style=flat&logo=vercel)](https://gledrian.dev)
 
