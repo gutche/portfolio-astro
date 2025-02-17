@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import portfolioAstro from "../../public/portfolio-astro.png";
-import yappin from "../../public/yappin-web.png";
+import yappin from "../../public/yappin.png";
 import oldPortfolio from "../../public/portfolio-old.png";
 
 interface Project {
@@ -28,7 +28,7 @@ const projects: Project[] = [
 		status: "In Development",
 	},
 	{
-		title: "Portfolio made with Gatsby (old)",
+		title: "Old portfolio made with Gatsby",
 		image: oldPortfolio as ImageMetadata,
 		link: "https://github.com/gutche/portfolio",
 		preview: "https://gledriandev.netlify.app",
