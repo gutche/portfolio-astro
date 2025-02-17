@@ -1,6 +1,7 @@
 # Portfolio
 
-![GledrianGutierrez-portfolio](https://github.com/user-attachments/assets/e284a42b-15c5-495c-99c7-ad5c1eb3bbe7)
+![portfolio screenshot](public/portfolio-astro.png)
+
 [![Deploy Status](https://img.shields.io/badge/Deploy-Vercel-black?style=flat&logo=vercel)](https://gledrian.dev)
 
 ---
