@@ -36,18 +36,12 @@ const { title } = Astro.props;
 		<!-- Google tag (gtag.js) -->
 		<script src="https://www.googletagmanager.com/gtag/js?id=G-K9VFGR6XZS"
 		></script>
-		<script>
-			declare global {
-				interface Window {
-					dataLayer: any[];
-				}
-			}
+		<script is:inline>
 			window.dataLayer = window.dataLayer || [];
-			function gtag(...args: any[]) {
-				window.dataLayer.push(args);
+			function gtag() {
+				dataLayer.push(arguments);
 			}
 			gtag("js", new Date());
-
 			gtag("config", "G-K9VFGR6XZS");
 		</script>
 
@@ -103,6 +97,5 @@ const { title } = Astro.props;
 	/* Scrollbar styles for Firefox */
 	* {
 		scrollbar-width: thin;
-		scrollbar-color: var(--line) var(--container);
 	}
 </style>
